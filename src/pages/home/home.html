@@ -1,0 +1,55 @@
+<ion-header transparent>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main">
+<ion-list no-lines>
+    <button ion-item align-left detail-none [navPush]="ListPage">
+  <ion-icon ios="ios-home-outline" md="md-home" padding></ion-icon>
+     Feeds
+    </button>
+   <button ion-item align-left  detail-none>
+     <ion-icon ios="ios-musical-notes-outline" md="md-musical-notes" padding></ion-icon>
+     Music
+    </button>
+       <button ion-item align-left  detail-none>
+    <ion-icon ios="ios-contact-outline" md="md-contact" padding></ion-icon>
+     Profile
+    </button> 
+       <button ion-item align-left  detail-none >
+  <ion-icon ios="ios-cog" md="md-cog" padding></ion-icon>
+     Settings
+    </button>
+      <button (click)="logout()" ion-item align-left  detail-none >
+   <ion-icon ios="ios-exit-outline" md="md-exit" padding></ion-icon>
+     Logout
+    </button>
+
+</ion-list>
+<ion-item no-lines>
+    <ion-thumbnail item-left>
+      <img src="assets/images/profile.jpg"  style="border-radius:50%;">
+    </ion-thumbnail>
+    <h2>{{auth.currentUser}}</h2>
+    <p>Hayao Miyazaki • 1988</p>
+<ion-card *ngIf="userProfile">
+  <img [src]="userProfile.photoURL"/>
+  <ion-card-content>
+    <ion-card-title>
+      {{ userProfile.displayName }}
+    </ion-card-title>
+    <p>
+      The UID for this new user is {{userProfile.uid}} and the email is {{userProfile.email}}
+    </p>
+  </ion-card-content>
+</ion-card>
+  </ion-item>
+
+
+
+</ion-content>

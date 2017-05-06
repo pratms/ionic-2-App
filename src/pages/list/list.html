@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon class="ion-icon" name="menu"></ion-icon>
+    </button>
+    <ion-title>Trending</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page" (swipe)="swipeEvent($event)" >
+<ion-grid>
+  <ion-row row-2>
+    <ion-col col-8 (click)="global(track)">
+     <img  src="assets/images/album.jpg"/>
+    <div class="card-title">Top Global Trending</div>
+    <div class="card-subtitle">20 Songs</div>
+</ion-col>
+<ion-col col-4 (click)="ustrends(track)"> 
+    <img src="assets/images/us.jpg"/>
+    <div class="card-title">US trending </div>
+    <div class="card-subtitle">14 Songs</div>
+   </ion-col>
+  </ion-row>
+  <ion-row row-2>
+    <ion-col col-4 *ngFor="let track of tracks;" (click) = "clicked(track)"> 
+  <img [src] = "track.img" />
+    <div class="title-small">{{track.artist}}</div>
+    <div class="card-subtitle">38 songs</div>
+</ion-col>
+
+  </ion-row>
+</ion-grid>
+
+</ion-content>

@@ -1,0 +1,27 @@
+.ios, .md {
+page-home {
+	background-color: transparent;
+.label-md, .label-ios{
+	color: #fff;
+	text-align: left;
+}
+ion-icon{
+	color: #fff;
+}
+  .scroll-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    button {
+    	background-color: transparent;
+    }
+    ion-item{
+    	background-color: rgba(0, 0, 0, 0.57);
+ 
+    border-radius: 17px;
+    }
+
+}
+}
